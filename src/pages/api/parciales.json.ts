@@ -1,5 +1,7 @@
+import type { IParcial } from "@/schemas/parcial";
+
 export function GET() {
-  const data = [
+  const data: IParcial[] = [
     {
       id: 1,
       title: "Parcial 1",
@@ -74,8 +76,19 @@ export function GET() {
             "applications": "Usado en inteligencia artificial, optimización de recursos en redes y simulaciones numéricas en desarrollo web y análisis de datos.",
           }
         ]
-
     },
+    {
+      id: 2,
+      title: "Parcial 2",
+      description: "Parcial 2 de la materia de Métodos Numéricos",
+      content: []
+    },
+    {
+      id: 3,
+      title: "Parcial 3",
+      description: "Parcial 3 de la materia de Métodos Numéricos",
+      content: []
+    }
   ];
 
   return new Response(JSON.stringify(data), {
