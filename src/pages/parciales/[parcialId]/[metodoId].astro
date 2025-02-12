@@ -1,0 +1,64 @@
+---
+import Container from "../../../layouts/Container.astro";
+import Layout from "../../../layouts/Layout.astro";
+
+const response = await fetch("http://localhost:4321/api/parciales.json");
+const data = await response.json();
+
+const { parcialId, metodoId } = Astro.params;
+
+const parcialContent = data.find((parcial) => parcial.id === Number(parcialId));
+
+const methodContent = data
+  .find((parcial) => parcial.id === Number(parcialId))
+  .content.find((metodo) => metodo.id === Number(metodoId));
+
+export const prerender = false;
+---
+
+<Layout title="Apuntes de Métodos Númericos Por Eber Alejo">
+  <Container>
+    <h2 class="text-2xl font-bold">{parcialContent.title}</h2>
+    <p class="text-zinc-700">{parcialContent.description}</p>
+    <section class="mt-10 space-y-4 md:max-w-[70%] mx-auto">
+      <div>
+        <h3 class="font-bold text-xl">{methodContent.title}</h3>
+        <p>{methodContent.description}</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-xl">Antecedentes</h4>
+        <p>{methodContent.methodBackground}</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-xl">Relacion con otros metodos</h4>
+        <p>{methodContent.relationshipsWithOtherMethods}</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-xl">Formula</h4>
+        <p>{methodContent.formula}</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-xl">Algoritmo</h4>
+        <ol>
+          {methodContent.algorithm.map((step) => <li>{step}</li>)}
+        </ol>
+      </div>
+      <div>
+        <h4 class="font-bold text-xl">Ejemplos</h4>
+        <!-- <ul>
+          {
+            methodContent.example.map((url) => (
+              <li>
+                <img src={url} alt="Method example" />
+              </li>
+            ))
+          }
+        </ul> -->
+      </div>
+      <div>
+        <h4 class="font-bold text-xl">Aplicaciones</h4>
+        <p>{methodContent.applications}</p>
+      </div>
+    </section>
+  </Container>
+</Layout>
