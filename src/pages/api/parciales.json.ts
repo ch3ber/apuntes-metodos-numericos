@@ -11,20 +11,26 @@ export function GET() {
           {
             "id": 1,
             "title": "Método de la Secante",
-            "description": "El método de la secante es un procedimiento numérico para encontrar raíces de ecuaciones no lineales, aproximando la función con una línea secante basada en dos puntos iniciales.",
-            "methodBackground": "El método de la secante es una variación del método de Newton, desarrollado para reducir la complejidad computacional al evitar el cálculo de derivadas. Se usa en problemas matemáticos no lineales en ingeniería y computación.",
-            "relationshipsWithOtherMethods": "Relacionado con el método de Newton-Raphson (que usa derivadas) y el método de bisección (que divide un intervalo). La secante suele ser más rápida que la bisección, pero menos estable que Newton.",
-            "formula": "x_{n+1} = x_n - (f(x_n) * (x_n - x_{n-1})) / (f(x_n) - f(x_{n-1}))",
+            "description": "El método de la secante es un procedimiento numérico para encontrar raíces de ecuaciones no lineales de la forma f(x) = 0. Este método pertenece a la familia de métodos iterativos y se basa en una aproximación lineal de la función, utilizando dos puntos iniciales para generar una secante (línea recta que cruza la curva de la función). Es un método relacionado con el método de Newton-Raphson, pero tiene la ventaja de no requerir la derivada de la función.",
+            "methodBackground": "El método de la secante es una variación del método de Newton, desarrollado para reducir la complejidad computacional al evitar el cálculo de derivadas. Ambos métodos se originan en la búsqueda de soluciones para problemas matemáticos no lineales, que tienen aplicaciones fundamentales en ingeniería, física y computación. El método de la secante se utiliza comúnmente cuando la función objetivo es complicada y su derivada no está fácilmente disponible o es costosa de calcular.",
+            "relationshipsWithOtherMethods": "El método de la secante está relacionado con otros métodos iterativos como el método de bisección (basado en dividir un intervalo) y el método de Newton-Raphson (que utiliza derivadas). Aunque la convergencia del método de la secante es más lenta que la del método de Newton, suele ser más rápida que la del método de bisección.",
+            "formula": "x_{n+1} = x_n - \\frac{f(x_n)(x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}",
             "algorithm": [
+              "Definir la función f(x) de la cual se desea encontrar la raíz.",
               "Seleccionar dos puntos iniciales x0 y x1.",
-              "Calcular f(x0) y f(x1).",
-              "Aplicar la fórmula de la secante para obtener x2.",
-              "Comprobar convergencia: si |x2 - x1| < tolerancia, terminar.",
-              "Actualizar x0 = x1, x1 = x2 y repetir hasta la convergencia o alcanzar el máximo de iteraciones."
+              "Definir una tolerancia para la convergencia y un número máximo de iteraciones.",
+              "Para cada iteración hasta el máximo permitido:",
+              "\tCalcular f(x0) y f(x1).",
+              "\tVerificar si la diferencia entre f(x1) y f(x0) es cero (para evitar división por cero).",
+              "\tAplicar la fórmula del método de la secante para calcular el nuevo valor x2.",
+              "\tComprobar si la diferencia entre x2 y x1 es menor que la tolerancia, en cuyo caso detener el proceso y devolver x2 como la raíz aproximada.",
+              "\tActualizar los valores x0 y x1 con x1 y x2, respectivamente.",
+              "Si se alcanza el número máximo de iteraciones sin converger, finalizar el método con un mensaje de error."
             ],
-            "example": ["https://ejemplo1.com", "https://ejemplo2.com", "https://ejemplo3.com"],
-            "applications": "Utilizado en análisis de datos, simulaciones y optimización en algoritmos computacionales.",
+            "example": [],
+            "applications": "El método de la secante puede emplearse en análisis de datos o desarrollo web cuando es necesario encontrar soluciones a problemas matemáticos complejos. Por ejemplo: 1. En análisis de datos, podrías usar este método para ajustar modelos no lineales o calcular el punto de equilibrio en un modelo económico. 2. En automatización de tareas, puede ser útil para determinar parámetros óptimos en sistemas de simulación."
           },
+
           {
             "id": 2,
             "title": "Método del Punto Fijo",
