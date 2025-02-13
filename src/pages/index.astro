@@ -6,40 +6,42 @@ import Layout from "@/layouts/Layout.astro";
 <Layout title="Apuntes de Métodos Númericos Por Eber Alejo">
   <Container>
     <h2 class="text-2xl font-bold">Introducción</h2>
-  <main class="mt-8 flex flex-col gap-4">
-  <p>
-    En el ámbito de la computación y la ingeniería, la resolución de
-    ecuaciones no lineales y sistemas de ecuaciones lineales es una tarea
-    fundamental. Diversos métodos numéricos han sido desarrollados para
-    aproximar soluciones cuando los métodos analíticos no son viables. Entre
-    los más utilizados se encuentran el <b>método de bisección, el método de la
-    secante, el método del punto fijo, el método de Newton-Raphson y el método
-    de Gauss-Jordan</b>.
-  </p>
-  <p>
-    El <b>método de bisección</b> es una técnica robusta y confiable que se basa
-    en el <b>teorema del valor intermedio</b>, asegurando la existencia de una
-    raíz dentro de un intervalo donde la función cambia de signo. Es simple,
-    pero su convergencia es lenta. Por otro lado, el <b>método de la secante</b>
-    es una optimización del método de Newton-Raphson, eliminando la necesidad
-    de calcular derivadas, lo que lo hace más eficiente en algunos casos.
-  </p>
-  <p>
-    El <b>método del punto fijo</b> reformula el problema en la forma \( x = g(x)
-    \) y utiliza iteraciones sucesivas para encontrar la solución. Su
-    efectividad depende de la elección de la función \( g(x) \). En contraste,
-    el <b>método de Newton-Raphson</b> es uno de los más rápidos, utilizando la
-    derivada de la función para mejorar las aproximaciones en cada iteración,
-    aunque requiere una estimación inicial cercana a la raíz.
-  </p>
-  <p>
-    Finalmente, el <b>método de Gauss-Jordan</b> se emplea para resolver sistemas
-    de ecuaciones lineales, transformando la matriz aumentada en su forma
-    escalonada reducida. Es una técnica poderosa en el álgebra lineal, con
-    aplicaciones en simulaciones, análisis de datos y optimización de
-    algoritmos computacionales.
-  </p>
-</main>
-
+    <main class="mt-8 flex flex-col gap-4">
+      <p>
+        En el ámbito de la computación y la ingeniería, la resolución de
+        ecuaciones no lineales y sistemas de ecuaciones lineales es una tarea
+        fundamental. Diversos métodos numéricos han sido desarrollados para
+        aproximar soluciones cuando los métodos analíticos no son viables. Entre
+        los más utilizados se encuentran el <b
+          >método de bisección, el método de la secante, el método del punto
+          fijo, el método de Newton-Raphson y el método de Gauss-Jordan</b
+        >.
+      </p>
+      <p>
+        El <b>método de bisección</b> es una técnica robusta y confiable que se basa
+        en el <b>teorema del valor intermedio</b>, asegurando la existencia de
+        una raíz dentro de un intervalo donde la función cambia de signo. Es
+        simple, pero su convergencia es lenta. Por otro lado, el <b
+          >método de la secante</b
+        >
+        es una optimización del método de Newton-Raphson, eliminando la necesidad
+        de calcular derivadas, lo que lo hace más eficiente en algunos casos.
+      </p>
+      <p>
+        El <b>método del punto fijo</b> reformula el problema en la forma \( x =
+        g(x) \) y utiliza iteraciones sucesivas para encontrar la solución. Su efectividad
+        depende de la elección de la función \( g(x) \). En contraste, el <b
+          >método de Newton-Raphson</b
+        > es uno de los más rápidos, utilizando la derivada de la función para mejorar
+        las aproximaciones en cada iteración, aunque requiere una estimación inicial
+        cercana a la raíz.
+      </p>
+      <p>
+        Finalmente, el <b>método de Gauss-Jordan</b> se emplea para resolver sistemas
+        de ecuaciones lineales, transformando la matriz aumentada en su forma escalonada
+        reducida. Es una técnica poderosa en el álgebra lineal, con aplicaciones
+        en simulaciones, análisis de datos y optimización de algoritmos computacionales.
+      </p>
+    </main>
   </Container>
 </Layout>
