@@ -27,7 +27,7 @@ export function GET() {
               "Si la diferencia entre a y b es menor que la tolerancia, devolver c como la raíz aproximada.",
               "Si se alcanza el número máximo de iteraciones sin converger, finalizar el método con un mensaje de error."
             ],
-            "example": [],
+            "example": ['/img/biseccion.png'],
             "applications": "El método de bisección tiene diversas aplicaciones en desarrollo web, automatización de tareas y análisis de datos: 1. Análisis de datos: Puede utilizarse para optimizar modelos de predicción cuando se requiere encontrar un valor óptimo en un intervalo específico. 2. Automatización de tareas: Se puede aplicar en la calibración de parámetros en scripts automatizados, por ejemplo, ajustando umbrales de decisión en sistemas de monitoreo. 3. Desarrollo web: En motores de búsqueda o sistemas de recomendación, el método puede emplearse para ajustar dinámicamente parámetros como tasas de conversión o métricas de clasificación."
           },
           {
@@ -36,7 +36,7 @@ export function GET() {
             "description": "El método de Newton-Raphson es un algoritmo numérico para encontrar raíces de funciones de la forma f(x) = 0. Se basa en una aproximación iterativa utilizando la derivada de la función para calcular mejores estimaciones de la raíz. Es ampliamente utilizado debido a su rapidez y eficiencia en problemas de análisis numérico y optimización.",
             "methodBackground": "El método de Newton-Raphson fue desarrollado por Isaac Newton y posteriormente formalizado por Joseph Raphson en el siglo XVII. Es una de las técnicas más utilizadas en cálculo numérico debido a su rapidez en la convergencia, especialmente cuando se inicia con una buena aproximación inicial.",
             "relationshipsWithOtherMethods": "El método de Newton-Raphson está relacionado con el método de la secante, que es una versión que no requiere la derivada, y con el método de bisección, que aunque es más estable, converge más lentamente. También está vinculado con el método del punto fijo, ya que ambos son métodos iterativos utilizados para encontrar soluciones de ecuaciones.",
-            "formula": "x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}",
+            "formula": "x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}",
             "algorithm": [
               "Definir la función f(x) y su derivada f'(x).",
               "Seleccionar un valor inicial x0.",
@@ -49,7 +49,7 @@ export function GET() {
               "\tActualizar x_n con x_{n+1}.",
               "Si se alcanza el número máximo de iteraciones sin converger, finalizar el método con un mensaje de error."
             ],
-            "example": [],
+            "example": ['/img/newtonraphson.jpeg'],
             "applications": "El método de Newton-Raphson es útil en desarrollo web, automatización de tareas y análisis de datos, ya que permite resolver problemas de optimización y encontrar valores óptimos en algoritmos: 1. Análisis de datos: Se usa para optimizar modelos de aprendizaje automático ajustando parámetros en funciones de costo. 2. Automatización de tareas: Puede ser útil para encontrar umbrales óptimos en sistemas de monitoreo o calibración automática. 3. Desarrollo web: En motores de búsqueda o sistemas de recomendación, ayuda a ajustar parámetros de personalización en tiempo real."
           },
           {
@@ -71,7 +71,7 @@ export function GET() {
               "\tActualizar los valores x0 y x1 con x1 y x2, respectivamente.",
               "Si se alcanza el número máximo de iteraciones sin converger, finalizar el método con un mensaje de error."
             ],
-            "example": [],
+            "example": ['/img/secante-1.jpg', '/img/secante-2.jpg'],
             "applications": "El método de la secante puede emplearse en análisis de datos o desarrollo web cuando es necesario encontrar soluciones a problemas matemáticos complejos. Por ejemplo: 1. En análisis de datos, podrías usar este método para ajustar modelos no lineales o calcular el punto de equilibrio en un modelo económico. 2. En automatización de tareas, puede ser útil para determinar parámetros óptimos en sistemas de simulación."
           },
           {
@@ -91,7 +91,7 @@ export function GET() {
               "\tActualizar x0 con x1 para la siguiente iteración.",
               "Si se alcanza el número máximo de iteraciones sin converger, finalizar el método con un mensaje de error."
             ],
-            "example": [],
+            "example": ['/img/punto-fijo.jpg'],
             "applications": "El método del punto fijo se puede utilizar en diversas aplicaciones dentro de la ingeniería en tecnologías computacionales: 1. Análisis de datos: en la modelización de problemas donde se requiere encontrar parámetros óptimos en modelos de predicción iterativos. 2. Automatización de tareas: en el ajuste de algoritmos de aprendizaje automático, donde ciertos hiperparámetros pueden ser ajustados iterativamente. 3. Desarrollo web: puede aplicarse en la optimización de funciones iterativas en sistemas de recomendación o motores de búsqueda personalizados."
           },
           {
@@ -111,7 +111,7 @@ export function GET() {
               "Si se usa el método de Gauss, aplicar sustitución regresiva para obtener la solución del sistema.",
               "Si se usa el método de Gauss-Jordan, el sistema ya estará resuelto cuando la matriz sea escalonada reducida."
             ],
-            "example": [],
+            "example": ['/img/gauss.jpeg'],
             "applications": "Los métodos de Gauss y Gauss-Jordan tienen diversas aplicaciones en la ingeniería en tecnologías computacionales: 1. Análisis de datos: se pueden utilizar para resolver sistemas de ecuaciones que aparecen en regresión lineal múltiple, un modelo clave en la predicción de datos. 2. Automatización de tareas: en optimización de costos y recursos, los sistemas de ecuaciones se usan para minimizar tiempos de ejecución en tareas repetitivas. 3. Desarrollo web: se pueden emplear en la distribución de carga en servidores, donde el balanceo de carga puede modelarse con sistemas de ecuaciones."
           }
         ]
