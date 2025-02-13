@@ -1,4 +1,5 @@
 ---
+import { truncateTextWithoutCuttingWords } from "@/utils/truncateTextWithoutCuttingWords";
 import { envConfig } from "@config/validateEnv";
 import Container from "@layouts/Container.astro";
 import Layout from "@layouts/Layout.astro";
@@ -46,7 +47,7 @@ const data = await response.json();
                     >
                       <h3 class="font-medium">{subsection.title}</h3>
                       <p class="text-sm text-gray-500 leading-relaxed">
-                        {subsection.description}
+                        {truncateTextWithoutCuttingWords(subsection.description, 200)}
                       </p>
                       <div class="flex justify-end">
                         <a
