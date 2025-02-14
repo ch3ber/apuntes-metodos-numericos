@@ -4,7 +4,7 @@ title: Acerca De
 ---
 
 # Tabla Comparativa de Metodos
-<table border="1" class="border">
+<table border="1" class="border overflow-auto">
     <tr class="border">
         <th class="border">Método</th>
         <th class="border">Tipo de Problema</th>
