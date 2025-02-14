@@ -3,6 +3,51 @@ layout: ../layouts/StaticLayout.astro
 title: Acerca De
 ---
 
+# Tabla Comparativa de Metodos
+<table border="1" class="border">
+    <tr class="border">
+        <th class="border">Método</th>
+        <th class="border">Tipo de Problema</th>
+        <th class="border">Fórmula</th>
+        <th class="border">Ventajas</th>
+        <th class="border">Desventajas</th>
+        <th class="border">Aplicaciones</th>
+    </tr>
+    <tr class="border">
+        <td class="border text-sm p-2">Bisección</td>
+        <td class="border text-sm p-2">Búsqueda de raíces en intervalos</td>
+        <td class="border text-sm p-2">\( c = \frac{a + b}{2} \)</td>
+        <td class="border text-sm p-2">Garantiza convergencia si hay cambio de signo</td>
+        <td class="border text-sm p-2">Convergencia lenta</td>
+        <td class="border text-sm p-2">Raíces en problemas de ingeniería y ciencia</td>
+    </tr>
+    <tr class="border">
+        <td class="border text-sm p-2">Secante</td>
+        <td class="border text-sm p-2">Búsqueda de raíces sin derivadas</td>
+        <td class="border text-sm p-2">\( x_{n+1} = x_n - \frac{f(x_n) (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})} \)</td>
+        <td class="border text-sm p-2">No requiere derivadas, más rápido que bisección</td>
+        <td class="border text-sm p-2">Puede fallar si los puntos iniciales no son adecuados</td>
+        <td class="border text-sm p-2">Optimización y modelos financieros</td>
+    </tr>
+    <tr class="border">
+        <td class="border text-sm p-2">Punto Fijo</td>
+        <td class="border text-sm p-2">Transformación de ecuaciones no lineales</td>
+        <td class="border text-sm p-2">\( x_{n+1} = g(x_n) \)</td>
+        <td class="border text-sm p-2">Simple y fácil de aplicar</td>
+        <td class="border text-sm p-2">Puede no converger si \( g(x) \) no es adecuada</td>
+        <td class="border text-sm p-2">Modelado de procesos iterativos</td>
+    </tr>
+    <tr class="border">
+        <td class="border text-sm p-2">Newton-Raphson</td>
+        <td class="border text-sm p-2">Búsqueda de raíces usando derivadas</td>
+        <td class="border text-sm p-2">\( x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \)</td>
+        <td class="border text-sm p-2">Convergencia rápida si la estimación inicial es buena</td>
+        <td class="border text-sm p-2">Requiere derivada, puede no converger si \( f'(x) \) es pequeña</td>
+        <td class="border text-sm p-2">Cálculo de raíces en análisis numérico y machine learning</td>
+    </tr>
+</table>
+
+
 # Sitio Web sobre Métodos Numéricos
 
 ## Introducción
