@@ -1,8 +1,6 @@
 ---
 layout: ../layouts/StaticLayout.astro
 title: Acerca De
-author: Eber Alejo
-description: Acerca de los metodos
 ---
 
 # Sitio Web sobre Métodos Numéricos
@@ -90,7 +88,7 @@ El sitio web está desplegado en **Vercel** con soporte para **SSR (Server-Side 
 ## Resultados y Ejemplos
 
 ### Capturas de Pantalla
-Adjuntas en la documentación.
+![UI Home](/public/img/docs/ui-home.png)
 
 ### Interacción del Usuario
 El sitio ofrece una interfaz simple e intuitiva, con optimización **SEO** para mejorar su alcance. Los usuarios pueden navegar por los distintos métodos y parciales de manera sencilla.
