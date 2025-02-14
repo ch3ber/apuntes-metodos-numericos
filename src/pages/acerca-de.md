@@ -4,7 +4,8 @@ title: Acerca De
 ---
 
 # Tabla Comparativa de Metodos
-<table border="1" class="border overflow-auto">
+<div class="overflow-auto">
+<table border="1" class="border">
     <tr class="border">
         <th class="border">Método</th>
         <th class="border">Tipo de Problema</th>
@@ -46,6 +47,7 @@ title: Acerca De
         <td class="border text-sm p-2">Cálculo de raíces en análisis numérico y machine learning</td>
     </tr>
 </table>
+</div>
 
 
 # Sitio Web sobre Métodos Numéricos
