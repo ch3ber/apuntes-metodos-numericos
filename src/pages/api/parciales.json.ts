@@ -120,7 +120,99 @@ export function GET() {
       id: 2,
       title: "Parcial 2",
       description: "Parcial 2 de la materia de Métodos Numéricos",
-      content: []
+      content: [
+        {
+          "id": 7,
+          "title": "Métodos de Gauss-Seidel y Jacobi",
+          "description": "Los métodos de Gauss-Seidel y Jacobi son algoritmos iterativos utilizados para resolver sistemas de ecuaciones lineales de la forma Ax = b, donde A es una matriz de coeficientes, x es el vector de incógnitas y b es el vector de términos independientes. Son ampliamente utilizados en análisis numérico debido a su eficiencia en sistemas grandes y dispersos.",
+          "methodBackground": "El método de Jacobi fue desarrollado por Carl Gustav Jacobi en el siglo XIX, mientras que el método de Gauss-Seidel fue propuesto por Philipp Ludwig von Seidel como una mejora del método de Jacobi. Ambos métodos son fundamentales en el análisis numérico y se aplican en simulaciones, resolución de ecuaciones diferenciales y optimización. Matemáticamente, estos métodos pertenecen a la familia de métodos iterativos porque generan una aproximación progresiva de la solución en lugar de calcularla directamente como lo hace la eliminación de Gauss-Jordan. Son útiles cuando la matriz A es grande y dispersa (contiene muchos ceros), lo que reduce el costo computacional.",
+          "relationshipsWithOtherMethods": "Estos métodos están relacionados con: 1. Eliminación de Gauss y Gauss-Jordan, que resuelven sistemas de ecuaciones lineales mediante eliminación de filas pero son más costosos computacionalmente. 2. Método de Gradiente Conjugado, que es otro método iterativo para matrices grandes y dispersas. 3. Método de relajación sucesiva (SOR), que es una mejora del Gauss-Seidel para acelerar la convergencia.",
+          "formula": "x_i^{(k+1)} = \\frac{1}{a_{ii}} \\left( b_i - \\sum_{j \\neq i} a_{ij} x_j^{(k)} \\right)",
+          "algorithm": [
+            "Definir la matriz A y el vector b del sistema Ax = b.",
+            "Seleccionar un vector inicial x0 con valores aproximados.",
+            "Definir la tolerancia para la convergencia y el número máximo de iteraciones.",
+            "Para cada iteración hasta el máximo permitido:",
+            "\tPara cada variable xi, calcular su nuevo valor usando la ecuación iterativa.",
+            "\tSi se usa el método de Jacobi, utilizar únicamente los valores de la iteración anterior.",
+            "\tSi se usa el método de Gauss-Seidel, actualizar cada xi en cuanto se calcule.",
+            "\tVerificar si la diferencia entre iteraciones es menor que la tolerancia, en cuyo caso detener el proceso y devolver la solución aproximada.",
+            "Si se alcanza el número máximo de iteraciones sin converger, finalizar el método con un mensaje de error."
+          ],
+          "example": [],
+          "applications": "Los métodos iterativos como Jacobi y Gauss-Seidel pueden aplicarse en: 1. Desarrollo Web y Pruebas QA: Para modelar la carga de trabajo distribuida en servidores de microservicios y optimizar tiempos de respuesta. 2. Testing y Debugging: Para analizar errores en simulaciones de software que requieren resolver múltiples ecuaciones interdependientes. 3. Desarrollo de Apps: Para ajustar parámetros en sistemas de recomendación basados en múltiples variables. 4. Monitoreo de Registros en Memoria: Para predecir tendencias en el consumo de memoria de una aplicación basándose en datos de ejecución. 5. Hacking y Ciberseguridad: En la resolución de sistemas de ecuaciones en algoritmos de criptografía y análisis de patrones de tráfico de red. 6. Análisis de Datos: En modelos de predicción basados en ecuaciones diferenciales, como optimización de modelos de machine learning."
+        },
+        {
+          "id": 8,
+          "title": "Método de Montante",
+          "description": "El método de Montante es un algoritmo numérico basado en la regla del determinante que se emplea para la resolución de sistemas de ecuaciones lineales. Su principal ventaja es que evita el uso de fracciones en los cálculos intermedios, lo que lo hace más estable y eficiente en comparación con otros métodos basados en transformaciones matriciales, como Gauss-Jordan.",
+          "methodBackground": "El método de Montante se originó como una alternativa mejorada para resolver sistemas de ecuaciones lineales sin los problemas numéricos asociados a la división en cada paso, como sucede en la eliminación de Gauss-Jordan. Fue desarrollado por Carlos Montante, quien ideó este procedimiento basado en determinantes sucesivos que facilitan la reducción escalonada de la matriz. Matemáticamente, el método tiene aplicaciones en álgebra computacional y análisis numérico. En la práctica, es útil en problemas de optimización, simulaciones y cálculos en tiempo real, donde la estabilidad y precisión de los cálculos son críticas.",
+          "relationshipsWithOtherMethods": "El método de Montante está directamente relacionado con otros algoritmos de resolución de sistemas de ecuaciones: 1. Eliminación de Gauss y Gauss-Jordan: Ambos métodos transforman la matriz aumentada a una forma escalonada, pero Montante evita divisiones innecesarias y es más estable en términos numéricos. 2. Descomposición LU: Utiliza factorizaciones matriciales para resolver sistemas de ecuaciones, pero requiere más cálculos que Montante. 3. Método de Jacobi y Gauss-Seidel: Son métodos iterativos utilizados cuando la matriz es grande y dispersa, mientras que Montante es un método directo. 4. Regla de Cramer: También se basa en determinantes, pero es menos eficiente en sistemas grandes.",
+          "formula": "A'_{ij} = \\frac{A_{ij} \\cdot P_{anterior} - A_{i,k} \\cdot A_{k,j}}{P_{anterior}}",
+          "algorithm": [
+            "Construir la matriz aumentada del sistema de ecuaciones.",
+            "Inicializar el pivote anterior como 1.",
+            "Para cada pivote en la diagonal principal:",
+            "\tActualizar el pivote actual.",
+            "\tTransformar la matriz utilizando la regla de Montante.",
+            "\tNormalizar la fila pivote estableciendo el pivote en 1.",
+            "Una vez diagonalizada la matriz, extraer las soluciones de la última columna."
+          ],
+          "example": ['/img/parcial-2/montante.png'],
+          "applications": "El método de Montante puede aplicarse en áreas como: 1. Desarrollo web y pruebas QA: Para modelar la carga de servidores con múltiples variables y restricciones. 2. Testing y debugging: Para analizar errores en simulaciones de software que involucran múltiples ecuaciones interdependientes. 3. Análisis de datos y monitoreo en memoria: Para detectar anomalías en patrones de consumo de memoria en aplicaciones. 4. Ciberseguridad y hacking: En criptografía, donde se requiere resolver sistemas de ecuaciones en análisis de claves. 5. Optimización en desarrollo de apps: Para optimizar la asignación de recursos en un sistema con múltiples restricciones."
+        },
+        {
+          "id": 9,
+          "title": "Método de Interpolación y Método de Lagrange",
+          "description": "La interpolación numérica es un conjunto de métodos matemáticos utilizados para estimar valores de una función desconocida a partir de un conjunto de datos conocidos. Su objetivo principal es construir una función que pase exactamente por los puntos dados y permita evaluar valores intermedios. El método de interpolación de Lagrange es una técnica que usa un polinomio interpolador, calculado como la combinación lineal de funciones base denominadas polinomios de Lagrange, los cuales están diseñados para garantizar que el polinomio resultante pase exactamente por los puntos dados.",
+          "methodBackground": "El método de interpolación ha sido un área de estudio fundamental en análisis numérico desde tiempos de Newton y Gauss, quienes desarrollaron técnicas basadas en diferencias finitas. El método de Lagrange fue desarrollado por Joseph-Louis Lagrange en el siglo XVIII y se basa en la construcción de un polinomio interpolador utilizando pesos basados en productos de términos lineales. Este método es ampliamente utilizado en el análisis de datos, gráficos computacionales, procesamiento de señales y optimización. Su importancia radica en que permite encontrar aproximaciones precisas de funciones desconocidas basándose solo en valores discretos, sin necesidad de conocer la ecuación original.",
+          "relationshipsWithOtherMethods": "El método de Lagrange está relacionado con otras técnicas de interpolación y ajuste de datos, tales como: 1. Interpolación de Newton: Utiliza diferencias divididas para construir el polinomio interpolador. 2. Interpolación spline: En lugar de un solo polinomio, usa varios polinomios de grado menor para suavizar la aproximación. 3. Regresión polinómica: Busca ajustar una función a un conjunto de puntos minimizando el error, pero no necesariamente pasa por todos los puntos. 4. Interpolación de Hermite y Bézier: Métodos utilizados en gráficos computacionales para suavizar curvas.",
+          "formula": "P(x) = \\sum_{i=0}^{n} L_i(x) y_i,  L_i(x) = \\prod_{\\substack{j=0 \\\ j\\neq i}}^{n} \\frac{x - x_j}{x_i - x_j}",
+          "algorithm": [
+            "Definir los puntos conocidos (x_i, y_i).",
+            "Construir los polinomios base de Lagrange L_i(x).",
+            "Para cada L_i(x), calcular su valor en el punto de evaluación x.",
+            "Multiplicar cada L_i(x) por su correspondiente y_i y sumarlos para obtener P(x).",
+            "Retornar el valor interpolado P(x)."
+          ],
+          "example": [],
+          "applications": "El método de interpolación de Lagrange es útil en varias áreas de desarrollo de software e ingeniería computacional: 1. Desarrollo Web y Pruebas QA: Para interpolar datos de carga en servidores y detectar cuellos de botella. 2. Testing y Debugging: Para predecir valores de métricas de rendimiento de aplicaciones basadas en registros previos. 3. Monitoreo de Registros en Memoria: Para estimar el consumo de memoria de una aplicación a lo largo del tiempo basándose en datos históricos. 4. Hacking y Ciberseguridad: En análisis de tráfico de red, interpolando valores faltantes en datos de paquetes capturados. 5. Análisis de Datos: Para interpolar valores faltantes en bases de datos de tiempo real y mejorar modelos de predicción."
+        },
+        {
+          "id": 10,
+          "title": "Método de Regresión Polinómica",
+          "description": "La regresión polinómica es un tipo de regresión utilizada en análisis de datos para modelar la relación entre una variable independiente x y una variable dependiente y mediante un polinomio de grado n. Este método es una extensión de la regresión lineal y se emplea cuando la relación entre las variables no es lineal, lo que permite obtener modelos más precisos en ciertos contextos.",
+          "methodBackground": "La regresión polinómica surge como una extensión de la regresión lineal clásica para modelar datos curvilíneos. Se ha utilizado en estadística y machine learning para ajustar modelos a datos no lineales y mejorar predicciones en diversos campos, desde la economía hasta la inteligencia artificial.",
+          "relationshipsWithOtherMethods": "La regresión polinómica está relacionada con: 1. Regresión lineal: Es un caso particular cuando el polinomio es de grado 1. 2. Interpolación polinómica: Aunque ambas usan polinomios, la interpolación busca pasar exactamente por los puntos mientras que la regresión minimiza el error total. 3. Regresión logística: Se usa cuando la variable de salida es binaria (clasificación). 4. Redes neuronales: Las capas no lineales en redes neuronales pueden aproximar modelos similares a la regresión polinómica.",
+          "formula": "y = b_0 + b_1 x + b_2 x^2 + \\dots + b_n x^n + \\varepsilon",
+          "algorithm": [
+            "Recolectar los datos de entrenamiento: lista de valores x y y.",
+            "Construir la matriz de diseño con potencias de x.",
+            "Calcular los coeficientes resolviendo un sistema de ecuaciones lineales.",
+            "Evaluar el modelo en nuevos valores de x para hacer predicciones.",
+            "Validar el modelo midiendo el error de ajuste."
+          ],
+          "example": [],
+          "applications": "El método de regresión polinómica es útil en diversas aplicaciones dentro del análisis de datos y desarrollo de software: 1. Desarrollo Web: Optimización del rendimiento de una API analizando tiempos de respuesta en función de la carga del servidor. 2. Testing y Debugging: Predicción de métricas de rendimiento en aplicaciones basadas en datos históricos. 3. Monitoreo de Memoria: Estimación del consumo de memoria en una aplicación basándose en tendencias previas. 4. Hacking y Ciberseguridad: Análisis de tráfico de red interpolando valores faltantes en paquetes capturados. 5. Análisis de Datos: Modelado de relaciones no lineales entre variables en machine learning y predicción de tendencias."
+        },
+        {
+          "id": 11,
+          "title": "Método de Regresión Lineal Múltiple",
+          "description": "La regresión lineal múltiple es una técnica estadística utilizada para modelar la relación entre una variable dependiente y y múltiples variables independientes x_1, x_2, ..., x_n. Se emplea cuando una sola variable no es suficiente para explicar un fenómeno y es necesario incluir varias características en el modelo.",
+          "methodBackground": "La regresión lineal múltiple es una extensión de la regresión lineal simple, desarrollada en el siglo XIX y utilizada en diversas áreas de la ciencia y la ingeniería. Su aplicación ha crecido con la disponibilidad de datos y el avance de la computación, facilitando su implementación en inteligencia artificial, análisis de datos y optimización de procesos.",
+          "relationshipsWithOtherMethods": "La regresión lineal múltiple está relacionada con: 1. Regresión Lineal Simple: Se usa cuando hay solo una variable predictora (x). 2. Regresión Polinómica: Modela relaciones no lineales al incluir términos de x^2, x^3, .... 3. Redes Neuronales: Un modelo más complejo que generaliza la regresión con múltiples capas. 4. Regresión Logística: Similar a la regresión múltiple, pero usada para clasificación en lugar de regresión.",
+          "formula": "y = b_0 + b_1 x_1 + b_2 x_2 + \\dots + b_n x_n + \\varepsilon",
+          "algorithm": [
+            "Definir los datos de entrenamiento con variables independientes x_1, x_2, ..., x_n y la variable dependiente y.",
+            "Construir la matriz de diseño con los valores de x y añadir un término de intersección (b_0).",
+            "Calcular los coeficientes de regresión resolviendo el sistema de ecuaciones normal mediante métodos matriciales o mínimos cuadrados.",
+            "Evaluar el modelo en nuevos datos de entrada para hacer predicciones.",
+            "Validar el modelo utilizando métricas de error como el R^2 y el error cuadrático medio."
+          ],
+          "example": [],
+          "applications": "El método de regresión lineal múltiple es útil en diversas aplicaciones dentro del análisis de datos y desarrollo de software: 1. Desarrollo Web: Optimización del rendimiento de una API analizando tiempos de respuesta en función de la carga del servidor. 2. Testing y Debugging: Predicción de métricas de rendimiento en aplicaciones basadas en datos históricos. 3. Monitoreo de Memoria: Estimación del consumo de memoria en una aplicación basándose en tendencias previas. 4. Hacking y Ciberseguridad: Análisis de tráfico de red interpolando valores faltantes en paquetes capturados. 5. Análisis de Datos: Modelado de relaciones entre múltiples variables en machine learning y predicción de tendencias."
+        }
+      ]
     },
     {
       id: 3,
