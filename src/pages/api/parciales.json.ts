@@ -139,7 +139,7 @@ export function GET() {
             "\tVerificar si la diferencia entre iteraciones es menor que la tolerancia, en cuyo caso detener el proceso y devolver la solución aproximada.",
             "Si se alcanza el número máximo de iteraciones sin converger, finalizar el método con un mensaje de error."
           ],
-          "example": [],
+          "example": ['/img/parcial-2/GAUSS-SEIDEL.png'],
           "applications": "Los métodos iterativos como Jacobi y Gauss-Seidel pueden aplicarse en: 1. Desarrollo Web y Pruebas QA: Para modelar la carga de trabajo distribuida en servidores de microservicios y optimizar tiempos de respuesta. 2. Testing y Debugging: Para analizar errores en simulaciones de software que requieren resolver múltiples ecuaciones interdependientes. 3. Desarrollo de Apps: Para ajustar parámetros en sistemas de recomendación basados en múltiples variables. 4. Monitoreo de Registros en Memoria: Para predecir tendencias en el consumo de memoria de una aplicación basándose en datos de ejecución. 5. Hacking y Ciberseguridad: En la resolución de sistemas de ecuaciones en algoritmos de criptografía y análisis de patrones de tráfico de red. 6. Análisis de Datos: En modelos de predicción basados en ecuaciones diferenciales, como optimización de modelos de machine learning."
         },
         {
@@ -175,7 +175,7 @@ export function GET() {
             "Multiplicar cada L_i(x) por su correspondiente y_i y sumarlos para obtener P(x).",
             "Retornar el valor interpolado P(x)."
           ],
-          "example": [],
+          "example": ['/img/parcial-2/interpolacion-lagrange.jpeg'],
           "applications": "El método de interpolación de Lagrange es útil en varias áreas de desarrollo de software e ingeniería computacional: 1. Desarrollo Web y Pruebas QA: Para interpolar datos de carga en servidores y detectar cuellos de botella. 2. Testing y Debugging: Para predecir valores de métricas de rendimiento de aplicaciones basadas en registros previos. 3. Monitoreo de Registros en Memoria: Para estimar el consumo de memoria de una aplicación a lo largo del tiempo basándose en datos históricos. 4. Hacking y Ciberseguridad: En análisis de tráfico de red, interpolando valores faltantes en datos de paquetes capturados. 5. Análisis de Datos: Para interpolar valores faltantes en bases de datos de tiempo real y mejorar modelos de predicción."
         },
         {
@@ -192,7 +192,7 @@ export function GET() {
             "Evaluar el modelo en nuevos valores de x para hacer predicciones.",
             "Validar el modelo midiendo el error de ajuste."
           ],
-          "example": [],
+          "example": ['/img/parcial-2/regresion.png', '/img/parcial-2/regresion-2.png'],
           "applications": "El método de regresión polinómica es útil en diversas aplicaciones dentro del análisis de datos y desarrollo de software: 1. Desarrollo Web: Optimización del rendimiento de una API analizando tiempos de respuesta en función de la carga del servidor. 2. Testing y Debugging: Predicción de métricas de rendimiento en aplicaciones basadas en datos históricos. 3. Monitoreo de Memoria: Estimación del consumo de memoria en una aplicación basándose en tendencias previas. 4. Hacking y Ciberseguridad: Análisis de tráfico de red interpolando valores faltantes en paquetes capturados. 5. Análisis de Datos: Modelado de relaciones no lineales entre variables en machine learning y predicción de tendencias."
         },
         {
