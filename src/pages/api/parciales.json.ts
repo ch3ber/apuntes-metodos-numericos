@@ -218,7 +218,120 @@ export function GET() {
       id: 3,
       title: "Parcial 3",
       description: "Parcial 3 de la materia de Métodos Numéricos",
-      content: []
+      content: [
+        {
+          "id": 12,
+          "title": "Método de Diferencias Divididas de Newton",
+          "description": "El método de diferencias divididas de Newton es una técnica de interpolación utilizada para encontrar el polinomio interpolador de una función dada un conjunto de puntos (x_0, y_0), (x_1, y_1), ..., (x_n, y_n). Se basa en calcular coeficientes de diferencias divididas y construir un polinomio en forma de Newton, el cual es eficiente y fácil de evaluar. Este método es útil cuando se necesita interpolar datos de manera eficiente sin recalcular coeficientes para cada nuevo punto agregado, lo que lo hace ideal para situaciones en las que se recopilan datos en tiempo real.",
+          "methodBackground": "El método de diferencias divididas fue desarrollado por Isaac Newton como una generalización de su trabajo en interpolación polinómica. Se utiliza ampliamente en análisis numérico para la interpolación de funciones y se relaciona con otras técnicas como la interpolación de Lagrange y la regresión polinómica.",
+          "relationshipsWithOtherMethods": "Está relacionado con: 1. Interpolación de Lagrange: Ambos métodos generan un polinomio interpolador, pero el de Newton es más eficiente cuando se agregan nuevos puntos. 2. Interpolación spline: Se usa cuando la interpolación polinómica genera oscilaciones y se requieren funciones suaves por tramos. 3. Regresión polinómica: Busca minimizar el error en un ajuste de datos, mientras que Newton pasa exactamente por los puntos dados.",
+          "formula": "P_n(x) = f[x_0] + f[x_0, x_1](x - x_0) + f[x_0, x_1, x_2](x - x_0)(x - x_1) + ... + f[x_0, ..., x_n](x - x_0)(x - x_1)...(x - x_{n-1})",
+          "algorithm": [
+            "Organizar los puntos (x_i, y_i) en una tabla de diferencias divididas.",
+            "Calcular los coeficientes f[x_i], f[x_i, x_{i+1}], ..., f[x_0, ..., x_n] de forma recursiva.",
+            "Construir el polinomio interpolador P_n(x) usando la forma de Newton.",
+            "Evaluar el polinomio en el valor deseado x para obtener la estimación.",
+            "(Opcional) Graficar los puntos dados y el polinomio resultante para visualizar el ajuste."
+          ],
+          "example": ['/img/parcial-3/diferencias_divididas.jpg'],
+          "applications": "El método de diferencias divididas de Newton se aplica en múltiples contextos dentro de la ingeniería en tecnologías computacionales: 1. Desarrollo Web: Interpolación de datos para predecir métricas en servidores y servicios. 2. Testing y Debugging: Estimación de comportamiento intermedio de métricas de rendimiento. 3. Inteligencia Artificial: Construcción de modelos simples cuando se tienen pocos datos de entrenamiento. 4. Visualización de Datos: Interpolación para mejorar gráficos y análisis en dashboards. 5. Automatización: Estimaciones de parámetros desconocidos entre puntos medidos en tiempo real."
+        },
+        {
+          "id": 13,
+          "title": "Método del Trapecio",
+          "description": "El método del trapecio es una técnica de integración numérica que permite aproximar el área bajo una curva mediante una suma de áreas de trapecios. Es útil cuando la integral de una función no se puede resolver de forma analítica, como en el caso de ∫ e^{x^2} dx, cuya primitiva no tiene una forma elemental.",
+          "methodBackground": "Este método es una de las técnicas más antiguas y sencillas del cálculo numérico. Se deriva de la regla de los rectángulos pero mejora la precisión al usar segmentos lineales (trapecios) para aproximar la curva. Es precursor de otros métodos como Simpson, que usa parábolas en lugar de líneas rectas.",
+          "relationshipsWithOtherMethods": "Está relacionado con: 1. Método de Simpson: Más preciso, pero requiere un número par de subintervalos. 2. Regla del punto medio: Usa solo un valor por subintervalo. 3. Cuadratura de Gauss: Más precisa, pero más compleja. 4. Método Monte Carlo: Para funciones multidimensionales o aleatorias.",
+          "formula": "\\int_a^b f(x) dx \\approx \\frac{h}{2} [f(x_0) + 2f(x_1) + 2f(x_2) + ... + 2f(x_{n-1}) + f(x_n)]",
+          "algorithm": [
+            "Definir la función f(x), los límites de integración a y b, y el número de subintervalos n.",
+            "Calcular el tamaño del paso h = (b - a) / n.",
+            "Dividir el intervalo en puntos x_i desde a hasta b con paso h.",
+            "Evaluar f(x) en todos los puntos x_i.",
+            "Aplicar la fórmula del trapecio para calcular el área aproximada.",
+            "(Opcional) Visualizar la función y los trapecios para interpretación gráfica."
+          ],
+          "example": ['/img/parcial-3/trapecio.jpg'],
+          "applications": "El método del trapecio tiene aplicaciones relevantes en ingeniería en tecnologías computacionales: 1. Cálculo de áreas o probabilidades en modelos de IA. 2. Cómputo de energía o tráfico de red a partir de funciones continuas. 3. Análisis de señales cuando se tiene una función f(t) complicada. 4. En desarrollo web para graficar estimaciones numéricas o generar estadísticas avanzadas en tiempo real. 5. Optimización de procesos en pruebas o simulaciones basadas en ecuaciones integrales."
+        },
+        {
+          "id": 14,
+          "title": "Método de Simpson (Regla 3/8)",
+          "description": "El método de Simpson 3/8 es una técnica de integración numérica que permite aproximar el valor de una integral definida mediante la utilización de polinomios cúbicos. Es más precisa que el método del trapecio y es adecuada cuando se tienen cuatro puntos de evaluación (tres subintervalos).",
+          "methodBackground": "El método fue desarrollado por Thomas Simpson en el siglo XVIII como una mejora a la integración por segmentos lineales. Este método utiliza polinomios de tercer grado y ha sido ampliamente adoptado en el análisis numérico por su precisión en funciones no lineales.",
+          "relationshipsWithOtherMethods": "Está relacionado con: 1. Método del trapecio: Usa segmentos lineales en lugar de polinomios cúbicos. 2. Simpson 1/3: Otra variante de Simpson que requiere un número par de subintervalos. 3. Cuadratura de Gauss: Más precisa y generalizada pero más compleja. 4. Monte Carlo: Para funciones aleatorias o de muchas dimensiones.",
+          "formula": "\\int_a^b f(x) dx \\approx \\frac{3h}{8} [f(x_0) + 3f(x_1) + 3f(x_2) + f(x_3)]",
+          "algorithm": [
+            "Definir la función f(x), los límites de integración a y b, y establecer n = 3 subintervalos.",
+            "Calcular el valor de h = (b - a) / 3.",
+            "Calcular los puntos x_0 = a, x_1 = a + h, x_2 = a + 2h, x_3 = b.",
+            "Evaluar la función f(x) en x_0, x_1, x_2 y x_3.",
+            "Aplicar la fórmula del método de Simpson 3/8 para obtener la aproximación de la integral.",
+            "(Opcional) Visualizar la función y el ajuste del polinomio cúbico para interpretación gráfica."
+          ],
+          "example": ['/img/parcial-3/simpson.jpg'],
+          "applications": "El método de Simpson 3/8 es muy útil en situaciones como: 1. Simulación numérica para aproximar resultados de ecuaciones diferenciales o integrales. 2. Análisis de señales en reconstrucción de datos complejos. 3. Optimización de algoritmos computacionales que dependen de la evaluación de integrales. 4. Análisis de datos en ingeniería computacional para obtener resultados precisos en funciones difíciles de integrar."
+        },
+        {
+          "id": 15,
+          "title": "Método de Euler",
+          "description": "El método de Euler es una técnica numérica utilizada para aproximar soluciones de ecuaciones diferenciales ordinarias (EDO) de primer orden con un valor inicial conocido. Utiliza la pendiente de la función en un punto conocido para estimar el valor en un punto cercano.",
+          "methodBackground": "Desarrollado por Leonhard Euler en el siglo XVIII, este método es uno de los más antiguos y sencillos para resolver EDOs. Aunque básico, sienta las bases para métodos más avanzados en análisis numérico e integración numérica.",
+          "relationshipsWithOtherMethods": "El método de Euler es el precursor de varios métodos numéricos más sofisticados como: 1. Métodos de Runge-Kutta: Mejoran la precisión evaluando la pendiente en múltiples puntos. 2. Métodos de Adams-Bashforth: Usan múltiples puntos anteriores para mejorar la precisión. 3. Método de Euler Mejorado: Calcula la pendiente en el punto medio del intervalo.",
+          "formula": "y_{n+1} = y_n + h \cdot f(x_n, y_n)",
+          "algorithm": [
+            "Definir la ecuación diferencial y' = f(x, y), el valor inicial (x0, y0), el tamaño del paso h y el número de pasos n.",
+            "Inicializar x = x0 y y = y0.",
+            "Repetir n veces:",
+            "\tCalcular y_{n+1} = y_n + h * f(x_n, y_n).",
+            "\tActualizar x_n = x_n + h.",
+            "Guardar los pares (x_n, y_n) para graficar o analizar los resultados."
+          ],
+          "example": ['/img/parcial-3/euler.png'],
+          "applications": "El método de Euler se aplica en múltiples áreas de la ingeniería en tecnologías computacionales: 1. Sistemas de control: Aproximación de respuestas dinámicas de sistemas. 2. Análisis térmico: Modelado de enfriamiento por conducción. 3. Simulaciones numéricas: Cálculo iterativo de modelos físico-matemáticos. 4. Optimización computacional: Solución aproximada de EDOs en problemas de ingeniería. 5. Visualización y predicción: Gráficas de comportamiento aproximado en tiempo real."
+        },
+        {
+          "id": 16,
+          "title": "Método de Runge-Kutta",
+          "description": "El método de Runge-Kutta es una familia de técnicas numéricas utilizadas para resolver ecuaciones diferenciales ordinarias (EDOs) iniciales, ofreciendo mayor precisión que métodos como el de Euler sin requerir derivadas de orden superior.",
+          "methodBackground": "Desarrollado a principios del siglo XX por Carl Runge y Martin Wilhelm Kutta, este método fue diseñado para mejorar la precisión de las soluciones numéricas de EDOs manteniendo una implementación computacional sencilla. Su versión de cuarto orden es una de las más utilizadas por su buen equilibrio entre precisión y eficiencia.",
+          "relationshipsWithOtherMethods": "Está directamente relacionado con: 1. Método de Euler, al que mejora sustancialmente en precisión. 2. Métodos de Adams-Bashforth, que son multistep, mientras que Runge-Kutta es de paso único. 3. Métodos de Runge-Kutta-Fehlberg, que integran control de error y paso variable para optimización computacional.",
+          "formula": "y_{n+1} = y_n + \\frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)",
+          "algorithm": [
+            "Definir la EDO: y' = f(t, y), y(t_0) = y_0, tamaño de paso h, número de pasos n.",
+            "Inicializar t = t0, y = y0.",
+            "Para cada paso i de 1 a n:",
+            "\tCalcular k1 = f(t, y)",
+            "\tCalcular k2 = f(t + h/2, y + h*k1/2)",
+            "\tCalcular k3 = f(t + h/2, y + h*k2/2)",
+            "\tCalcular k4 = f(t + h, y + h*k3)",
+            "\tActualizar y = y + (h/6)*(k1 + 2*k2 + 2*k3 + k4)",
+            "\tActualizar t = t + h",
+            "\tGuardar (t, y)"
+          ],
+          "example": ['/img/parcial-3/kuta.png'],
+          "applications": "El método de Runge-Kutta es ampliamente utilizado en ingeniería en tecnologías computacionales para: 1. Simulación numérica de procesos físicos. 2. Análisis de sistemas dinámicos. 3. Modelado térmico o ambiental. 4. Integración en tiempo real de sensores y sistemas embebidos. 5. Predicción de comportamiento en sistemas de control.\n\nEjemplo aplicado: Modelado de enfriamiento de un sistema donde dT/dt = -0.1*(T - 25), con T(0) = 100, paso h = 1 y n = 10.\nResultado: T(10) aproximado usando RK4."
+        },
+        {
+          "id": 17,
+          "title": "Método de Romberg",
+          "description": "El método de Romberg es una técnica de integración numérica que mejora la precisión al estimar integrales definidas mediante la regla del trapecio y la extrapolación de Richardson.",
+          "methodBackground": "Desarrollado por Werner Romberg en 1955, este método combina evaluaciones sucesivas de la regla del trapecio con extrapolación de Richardson para lograr una convergencia rápida y precisa.",
+          "relationshipsWithOtherMethods": "El método de Romberg se basa en: 1. La regla del trapecio: utilizada para las primeras aproximaciones. 2. La extrapolación de Richardson: mejora la precisión combinando resultados anteriores. 3. Regla de Simpson: se considera un caso particular del esquema general de Romberg.",
+          "formula": "R(n, m) = R(n, m-1) + \\frac{R(n, m-1) - R(n-1, m-1)}{4^m - 1}",
+          "algorithm": [
+            "Definir la función f a integrar y los límites a y b.",
+            "Calcular R(0, 0) utilizando la regla del trapecio con un solo subintervalo.",
+            "Para cada n >= 1, hacer:",
+            "\t1. Calcular R(n, 0) usando 2^n subintervalos y la regla del trapecio.",
+            "\t2. Para m = 1 hasta n, aplicar la fórmula de extrapolación de Richardson para obtener R(n, m).",
+            "\t3. Verificar si |R(n, n) - R(n, n-1)| < tolerancia para decidir si detener el cálculo.",
+            "Devolver R(n, n) como la mejor aproximación de la integral."
+          ],
+          "example": ['/img/parcial-3/romberg.jpg'],
+          "applications": "El método de Romberg se aplica en diversas áreas como: 1. Procesamiento de señales digitales: cálculo de energía de una señal. 2. Telecomunicaciones: análisis de frecuencias mediante integración precisa. 3. Sistemas embebidos: integración eficiente en algoritmos numéricos. 4. Ingeniería de software: desarrollo de herramientas de análisis matemático.\n\nEjemplo aplicado: Estimar la energía de una señal senoidal s(t) = sin(2πft) evaluando \int_0^1 s(t)^2 dt con f=5. Resultado aproximado: Energía ≈ 0.50000000."
+        }
+      ]
     }
   ];
 
